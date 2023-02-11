@@ -1,4 +1,4 @@
-package shellInterface
+package shellinterface
 
 type Shell interface {
 	Execute()
