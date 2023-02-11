@@ -2,6 +2,7 @@
 
 - Docker環境立ち上げ
   - Dockerfile書かなくてもpullすればいい？→コードで管理するために書こう！
+  - Gitも必要
   - Go をDocker環境で使えるようにするヨ
     - Hello, World!までする
 
