@@ -1,0 +1,14 @@
+version: "3"
+services: 
+  gosh:
+    container_name: gosh
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes: 
+      - type: bind
+        source: "."
+        target: "/root/app"
+    working_dir: /root/app
