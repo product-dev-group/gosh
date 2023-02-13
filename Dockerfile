@@ -1,16 +1,15 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y vim git && apt install sudo
+RUN apt-get update && apt-get install -y vim git
 
-RUN sudo apt-get install software-properties-common -y
+RUN apt-get install software-properties-common -y
 
-RUN sudo apt update &&\
-    sudo add-apt-repository ppa:longsleep/golang-backports &&\
-    sudo apt install golang-go -y
+RUN add-apt-repository ppa:longsleep/golang-backports &&\
+    apt install golang-go -y
 
-RUN mkdir -p root/app
+RUN mkdir -p /opt/gosh
 
-WORKDIR root/app
+WORKDIR /opt/gosh
 
 COPY . .
 

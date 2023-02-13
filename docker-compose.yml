@@ -9,6 +9,6 @@ services:
     tty: true
     volumes: 
       - type: bind
-        source: "."
-        target: "/root/app"
-    working_dir: /root/app
+        source: .
+        target: /opt/gosh
+    working_dir: /opt/gosh
