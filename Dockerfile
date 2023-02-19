@@ -1,14 +1,14 @@
-FROM golang:1.20
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y vim git
-RUN mkdir -p /usr/src/gosh
-WORKDIR /usr/src/gosh
+RUN apt-get update && apt-get install vim git software-properties-common -y
 
-# pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
-COPY go.mod go.sum ./
-RUN go mod download && go mod verify
+RUN add-apt-repository ppa:longsleep/golang-backports &&\
+    apt install golang-go -y
+
+RUN mkdir -p /opt/gosh
+
+WORKDIR /opt/gosh
 
 COPY . .
-RUN go build -v -o /usr/local/bin/gosh ./main.go
 
-CMD ["gosh"]
+CMD ["/bin/bash"]
