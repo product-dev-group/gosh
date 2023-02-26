@@ -1,1 +1,3 @@
-module example.com/mod
+module gosh
+
+go 1.20

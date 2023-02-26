@@ -1,7 +1,7 @@
-package shellinterface
+package IShell
 
 type Shell interface {
-	Execute()
+	Execute() string
 }
 
 // type Hoge interface {
