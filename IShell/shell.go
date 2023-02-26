@@ -1,7 +1,7 @@
 package IShell
 
 type Shell interface {
-	Execute() string
+	Execute()
 }
 
 // type Hoge interface {
