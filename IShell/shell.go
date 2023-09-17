@@ -1,4 +1,4 @@
-package shellinterface
+package IShell
 
 type Shell interface {
 	Execute()
